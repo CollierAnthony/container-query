@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>container query test</title>
+</head>
+<body>
+    <h1>Container query test</h1>
+    <h2>Container with a traditional @media query</h2>
+    <div class="container container-media">
+        <div class="child"><p>This box will only change if the viewport is less than 250px wide</p></div>
+    </div>
+
+    <h2>Container with a @container query</h2>
+    <div class="container container-query">
+        <div class="child"><p>This box will change if its parent div is less than 250px wide </p></div>
+    </div>
+
+    <button onclick="changeSize()">Try it</button>
+</body>
+</html>
+
+<script>
+    function changeSize(){
+        let containers = document.getElementsByClassName('container');
+       Array.prototype.filter.call(containers, function(container){
+            return container.classList.toggle("clicked");
+        });
+    }
+</script>

@@ -1,0 +1,46 @@
+body{
+    background:#333333;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    color: white;
+    text-align: center;
+}
+.container-media,
+.container-query{
+    width: 100%;
+    max-width: 400px;
+    height: 250px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: solid 2px #4682b4;
+    margin: 0 auto;
+
+}
+.child{
+    background: #41b883;
+    height: 100px;
+    margin: 10px;
+}
+
+
+.clicked{
+    max-width: 250px;
+}
+@media screen and (max-width: 250px){
+    .container-media .child{
+        background: red;
+    }
+}
+
+/* 👇 This is the new thing that you are looking for 👇 */
+.container-query{
+    container-type: size;
+    container-name: container-1;
+}
+
+@container container-1 (max-width:250px){
+    .child{
+        background: red;
+    }
+}
+/* 👆 This is the new thing that you are looking for 👆 */
